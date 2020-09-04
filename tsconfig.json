@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "strict": true,
+        "strictNullChecks": false,
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es2018",
+        "sourceMap": false,
+        "baseUrl": "./",
+        "incremental": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "importHelpers": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@/*": ["./src/*"],
+            "@@/*": ["*"]
+        }
+    }
+}

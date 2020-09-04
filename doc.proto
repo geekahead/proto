@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package doc;
+
+service DocService {
+  rpc Upload (UploadBody) returns (Doc) {}
+}
+
+message UploadBody{
+    message File{
+        bytes data =1;
+        string filename = 2;
+    }
+    File file = 1;
+    string userId = 2;
+}
+
+message HeroById {
+  int32 id = 1;
+}
+
+message Doc {
+  string docId = 1;
+  string userId = 2;
+  string docName=3;
+  string docPath=4;
+  string convertStatus=5;
+  string convertResult=6;
+  bool delFlag=7;
+}
