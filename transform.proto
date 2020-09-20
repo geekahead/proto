@@ -3,51 +3,64 @@ syntax = "proto3";
 package transform;
 
 service TransformService {
-    rpc Convert (ConvertOptions) returns (Task) {}
+  rpc Convert (ConvertOptions) returns (Task) {}
+  rpc Update (TransformStatus) returns (Result) {}
 }
 
 message ConvertOptions {
-    string userId = 1;
-    string docId = 2;
-    string type = 3;
+  string userId = 1;
+  string docId = 2;
+  string type = 3;
 
-    message Options {
-        int32 backgroundColor = 1;
-        bool embedFonts = 2;
-        bool fitToWindow = 3;
-        bool includeHiddenSlides=4;
-        int32 windowScale=5;
-        int32 thumbScale=6;
-        enum ThumbFormatEnum {
-            UNIVERSAL = 0;
-            Png=1;
-            Jpg = 2;
-            WebP =3;
-            BothWebPAndPng=4;
-            BothWebPAndJpg=5;
-        }
-        ThumbFormatEnum thumbFormat=7;
-        message Logo{
-            int32 left=1;
-            int32 top=2;
-            int32 width=3;
-            int32 height=4;
-            string hyperLink=5;
-            string imagePath=6;
-        }
-        Logo logo=8;
+  message Options {
+    int32 backgroundColor = 1;
+    bool embedFonts = 2;
+    bool fitToWindow = 3;
+    bool includeHiddenSlides = 4;
+    int32 windowScale = 5;
+    int32 thumbScale = 6;
+    enum ThumbFormatEnum {
+      UNIVERSAL = 0;
+      Png = 1;
+      Jpg = 2;
+      WebP = 3;
+      BothWebPAndPng = 4;
+      BothWebPAndJpg = 5;
     }
-    repeated Options options = 4;
+    ThumbFormatEnum thumbFormat = 7;
+    message Logo{
+      int32 left = 1;
+      int32 top = 2;
+      int32 width = 3;
+      int32 height = 4;
+      string hyperLink = 5;
+      string imagePath = 6;
+    }
+    Logo logo = 8;
+  }
+  repeated Options options = 4;
 }
 
 message Task{
-    string id=1;
-    string taskId=2;
-    string docId=3;
-    string docPath=4;
-    string convertStatus =5;
-    string convertDocId=6;
-    int32 progress=7;
-    string errorMsg=8;
-    string convertConfig=9;
+  string id = 1;
+  string taskId = 2;
+  string docId = 3;
+  string docPath = 4;
+  string convertStatus = 5;
+  string convertDocId = 6;
+  int32 progress = 7;
+  string errorMsg = 8;
+  string convertConfig = 9;
+}
+
+message TransformStatus{
+  string id = 1;
+  string convertStatus = 2;
+  string errorMsg = 3;
+  int32 progress = 4;
+  bool success = 5;
+}
+
+message Result{
+  string id = 1;
 }
