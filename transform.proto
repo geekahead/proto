@@ -59,6 +59,7 @@ message TransformStatus{
   string errorMsg = 3;
   int32 progress = 4;
   bool success = 5;
+  string convertResult = 6;
 }
 
 message Result{
