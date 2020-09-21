@@ -54,7 +54,7 @@ message Task{
 }
 
 message TransformStatus{
-  string id = 1;
+  string taskId = 1;
   string convertStatus = 2;
   string errorMsg = 3;
   int32 progress = 4;
