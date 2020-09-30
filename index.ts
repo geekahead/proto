@@ -1,13 +1,11 @@
-import {ClientOptions, Transport} from '@nestjs/microservices';
 import {join} from 'path';
 
 /**
  *
  * @param url grpc 服务地址
  */
-const getOptions=(url:string):ClientOptions=>{
+const getOptions=(url:string)=>{
     return {
-        transport: Transport.GRPC,
         options: {
             url: url,
             package: ['doc', 'transform'],

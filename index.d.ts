@@ -1,3 +1,8 @@
-import { ClientOptions } from '@nestjs/microservices';
-declare const getOptions: (url: string) => ClientOptions;
+declare const getOptions: (url: string) => {
+    options: {
+        url: string;
+        package: string[];
+        protoPath: string[];
+    };
+};
 export default getOptions;
