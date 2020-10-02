@@ -6,7 +6,7 @@ const getOptions = (url) => {
         options: {
             url: url,
             package: ['doc', 'transform'],
-            protoPath: [path_1.join(__dirname, './doc.proto'), path_1.join(__dirname, './transform.proto')],
+            protoPath: [path_1.join(__dirname, './doc.proto')],
         },
     };
 };

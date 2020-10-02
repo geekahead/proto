@@ -9,7 +9,7 @@ const getOptions=(url:string)=>{
         options: {
             url: url,
             package: ['doc', 'transform'],
-            protoPath: [join(__dirname, './doc.proto'), join(__dirname, './transform.proto')],
+            protoPath: [join(__dirname, './doc.proto')],
         },
     };
 }
