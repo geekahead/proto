@@ -38,6 +38,7 @@ message Doc {
   string convertStatus=5;
   string convertResult=6;
   bool delFlag=7;
+  string thumb=8;
 }
 
 
