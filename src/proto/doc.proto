@@ -14,7 +14,7 @@ message ListBody{
 }
 
 message DocList{
-  repeated Doc doc=1;
+  repeated Doc docList=1;
 }
 
 message UploadBody{
