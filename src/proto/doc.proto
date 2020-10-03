@@ -4,8 +4,17 @@ package doc;
 
 service DocService {
   rpc Upload (UploadBody) returns (Doc) {}
+  rpc List (ListBody) returns (DocList){}
   rpc Convert (ConvertOptions) returns (Task) {}
   rpc Update (TransformStatus) returns (Result) {}
+}
+
+message ListBody{
+  string userId = 1;
+}
+
+message DocList{
+  repeated Doc doc=1;
 }
 
 message UploadBody{
