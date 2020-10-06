@@ -24,6 +24,8 @@ message UploadBody{
     }
     File file = 1;
     string userId = 2;
+    string appId = 3;
+    string classId = 4;
 }
 
 message HeroById {
