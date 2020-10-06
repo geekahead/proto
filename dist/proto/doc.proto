@@ -10,22 +10,24 @@ service DocService {
 }
 
 message ListBody{
-  string userId = 1;
+  string appId = 1;
+  string userId = 2;
+  string classId = 3;
 }
 
 message DocList{
-  repeated Doc list=1;
+  repeated Doc list = 1;
 }
 
 message UploadBody{
-    message File{
-        bytes data =1;
-        string filename = 2;
-    }
-    File file = 1;
-    string userId = 2;
-    string appId = 3;
-    string classId = 4;
+  message File{
+    bytes data = 1;
+    string filename = 2;
+  }
+  File file = 1;
+  string userId = 2;
+  string appId = 3;
+  string classId = 4;
 }
 
 message HeroById {
@@ -35,12 +37,12 @@ message HeroById {
 message Doc {
   string docId = 1;
   string userId = 2;
-  string docName=3;
-  string docPath=4;
-  string convertStatus=5;
-  string convertResult=6;
-  bool delFlag=7;
-  string thumb=8;
+  string docName = 3;
+  string docPath = 4;
+  string convertStatus = 5;
+  string convertResult = 6;
+  bool delFlag = 7;
+  string thumb = 8;
 }
 
 
