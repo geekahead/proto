@@ -5,8 +5,25 @@ package doc;
 service DocService {
   rpc Upload (UploadBody) returns (Doc) {}
   rpc List (ListBody) returns (DocList){}
+  rpc Progress (ProgressBody) returns (ProgressList){}
   rpc Convert (ConvertOptions) returns (Task) {}
   rpc Update (TransformStatus) returns (Result) {}
+}
+
+message ProgressBody{
+  repeated string taskIds = 1;
+}
+
+message ProgressList{
+  repeated Progress list = 1;
+}
+
+message Progress{
+  string taskId = 1;
+  int32 progress=2;
+  int32 totalSlides=3;
+  string thumb=4;
+  string targetPathPrefix=5;
 }
 
 message ListBody{
