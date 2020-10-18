@@ -95,7 +95,7 @@ message ConvertOptions {
     }
     Logo logo = 8;
   }
-  repeated Options options = 4;
+  Options options = 4;
 }
 
 message Task{
