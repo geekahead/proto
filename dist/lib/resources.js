@@ -92,8 +92,7 @@ class Resources {
         }
         return fileList;
     }
-    static async uploadLocalDir(dir) {
-        const dirKey = uuid_1.v4();
+    static async uploadLocalDir(dir, dirKey = uuid_1.v4()) {
         const fileList = this.walk(dir);
         for (let i = 0; i < fileList.length; i++) {
             const filePath = fileList[i];

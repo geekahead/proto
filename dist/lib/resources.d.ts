@@ -13,6 +13,6 @@ declare class Resources {
     static uploadLocalFile(filePath: string, key?: string): Promise<IUploadCallback>;
     static getDownloadUrl(key: string): string;
     private static walk;
-    static uploadLocalDir(dir: string): Promise<string>;
+    static uploadLocalDir(dir: string, dirKey?: string): Promise<string>;
 }
 export default Resources;
