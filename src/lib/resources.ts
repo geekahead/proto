@@ -130,6 +130,7 @@ class Resources {
             console.log(targetKey);
             await this.uploadLocalFile(filePath, targetKey);
         }
+        return dirKey;
     }
 }
 

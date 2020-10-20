@@ -102,6 +102,7 @@ class Resources {
             console.log(targetKey);
             await this.uploadLocalFile(filePath, targetKey);
         }
+        return dirKey;
     }
 }
 Resources.cdn = process.env.QN_CDN;
