@@ -3,7 +3,6 @@ syntax = "proto3";
 package doc;
 
 service DocService {
-  rpc Upload (UploadBody) returns (Doc) {}
   rpc List (ListBody) returns (DocList){}
   rpc Progress (ProgressBody) returns (ProgressList){}
   rpc Convert (ConvertOptions) returns (Task) {}
