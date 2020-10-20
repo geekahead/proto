@@ -23,7 +23,7 @@ message Progress{
   int32 progress = 2;
   int32 totalSlides = 3;
   string thumb = 4;
-  string targetPathPrefix = 5;
+  string result = 5;
 }
 
 message ListBody{
@@ -57,7 +57,7 @@ message Doc {
   string docName = 3;
   string docPath = 4;
   string convertStatus = 5;
-  string convertResult = 6;
+  string result = 6;
   bool delFlag = 7;
   string thumb = 8;
   string mediaType = 9;
