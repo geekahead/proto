@@ -20,7 +20,7 @@ message ProgressList{
 message Progress{
   string taskId = 1;
   int32 progress = 2;
-  int32 totalSlides = 3;
+  int32 pages = 3;
   string thumb = 4;
   string result = 5;
 }
@@ -60,6 +60,7 @@ message Doc {
   bool delFlag = 7;
   string thumb = 8;
   string mediaType = 9;
+  int32 pages = 10;
 }
 
 
