@@ -107,7 +107,7 @@ class Resources {
             return key;
         }
         const bucketManager = new qiniu.rs.BucketManager(mac, config);
-        return bucketManager.publicDownloadUrl(this.cdn, key);
+        return bucketManager.publicDownloadUrl(Resources.cdn, key);
     }
 
 
