@@ -56,7 +56,7 @@ message Doc {
     string docName = 3;
     string docPath = 4;
     string convertStatus = 5;
-    string result = 6;
+    repeated string result = 6;
     bool delFlag = 7;
     string thumb = 8;
     string mediaType = 9;
