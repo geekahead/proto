@@ -73,6 +73,9 @@ class Resources {
         });
     }
     static getDownloadUrl(key) {
+        if (!key) {
+            return "";
+        }
         if (/^(http(s)?:)?\/\//.test(key)) {
             return key;
         }

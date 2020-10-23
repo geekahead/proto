@@ -99,6 +99,9 @@ class Resources {
     }
 
     public static getDownloadUrl(key: string) {
+        if(!key){
+            return "";
+        }
         // if startWith http(s)://
         if(/^(http(s)?:)?\/\//.test(key)){
             return key;
