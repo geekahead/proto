@@ -99,6 +99,10 @@ class Resources {
     }
 
     public static getDownloadUrl(key: string) {
+        // if startWith http(s)://
+        if(/^(http(s)?:)?\/\//.test(key)){
+            return key;
+        }
         const bucketManager = new qiniu.rs.BucketManager(mac, config);
         return bucketManager.publicDownloadUrl(this.cdn, key);
     }
@@ -126,7 +130,6 @@ class Resources {
             const filePath = fileList[i];
             const fpath = filePath.replace(dir, '');
             const targetKey = path.join(dirKey, fpath).replace(/\\/g, '/');
-            console.log(targetKey);
             await this.uploadLocalFile(filePath, targetKey);
         }
         return dirKey;
