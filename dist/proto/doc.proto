@@ -3,123 +3,123 @@ syntax = "proto3";
 package doc;
 
 service DocService {
-  rpc Upload (UploadBody) returns (Doc) {}
-  rpc List (ListBody) returns (DocList){}
-  rpc Progress (ProgressBody) returns (ProgressList){}
-  rpc Convert (ConvertOptions) returns (Task) {}
+    rpc Upload (UploadBody) returns (Doc) {}
+    rpc List (ListBody) returns (DocList){}
+    rpc Progress (ProgressBody) returns (ProgressList){}
+    rpc Convert (ConvertOptions) returns (Task) {}
 }
 
 message ProgressBody{
-  repeated string taskIds = 1;
+    repeated string taskIds = 1;
 }
 
 message ProgressList{
-  repeated Progress list = 1;
+    repeated Progress list = 1;
 }
 
 message Progress{
-  string taskId = 1;
-  int32 progress = 2;
-  int32 pages = 3;
-  string thumb = 4;
-  string result = 5;
+    string taskId = 1;
+    int32 progress = 2;
+    int32 pages = 3;
+    string thumb = 4;
+    string result = 5;
 }
 
 message ListBody{
-  string appId = 1;
-  string userId = 2;
-  string classId = 3;
+    string appId = 1;
+    string userId = 2;
+    string classId = 3;
 }
 
 message DocList{
-  repeated Doc list = 1;
+    repeated Doc list = 1;
 }
 
 message UploadBody{
-  message File{
-    bytes data = 1;
-    string filename = 2;
-  }
-  File file = 1;
-  string userId = 2;
-  string appId = 3;
-  string classId = 4;
+    message File{
+        bytes data = 1;
+        string filename = 2;
+    }
+    File file = 1;
+    string userId = 2;
+    string appId = 3;
+    string classId = 4;
 }
 
 message HeroById {
-  int32 id = 1;
+    int32 id = 1;
 }
 
 message Doc {
-  string docId = 1;
-  string userId = 2;
-  string docName = 3;
-  string docPath = 4;
-  string convertStatus = 5;
-  string result = 6;
-  bool delFlag = 7;
-  string thumb = 8;
-  string mediaType = 9;
-  int32 pages = 10;
+    string docId = 1;
+    string userId = 2;
+    string docName = 3;
+    string docPath = 4;
+    string convertStatus = 5;
+    string result = 6;
+    bool delFlag = 7;
+    string thumb = 8;
+    string mediaType = 9;
+    int32 pages = 10;
 }
 
 
 message ConvertOptions {
-  string userId = 1;
-  string docId = 2;
-  string type = 3;
+    string userId = 1;
+    string docId = 2;
+    string type = 3;
 
-  message Options {
-    int32 backgroundColor = 1;
-    bool embedFonts = 2;
-    bool fitToWindow = 3;
-    bool includeHiddenSlides = 4;
-    int32 windowScale = 5;
-    int32 thumbScale = 6;
-    enum ThumbFormatEnum {
-      UNIVERSAL = 0;
-      Png = 1;
-      Jpg = 2;
-      WebP = 3;
-      BothWebPAndPng = 4;
-      BothWebPAndJpg = 5;
+    message Options {
+        int32 backgroundColor = 1;
+        bool embedFonts = 2;
+        bool fitToWindow = 3;
+        bool includeHiddenSlides = 4;
+        int32 windowScale = 5;
+        int32 thumbScale = 6;
+        enum ThumbFormatEnum {
+            UNIVERSAL = 0;
+            Png = 1;
+            Jpg = 2;
+            WebP = 3;
+            BothWebPAndPng = 4;
+            BothWebPAndJpg = 5;
+        }
+        ThumbFormatEnum thumbFormat = 7;
+        message Logo{
+            int32 left = 1;
+            int32 top = 2;
+            int32 width = 3;
+            int32 height = 4;
+            string hyperLink = 5;
+            string imagePath = 6;
+        }
+        Logo logo = 8;
     }
-    ThumbFormatEnum thumbFormat = 7;
-    message Logo{
-      int32 left = 1;
-      int32 top = 2;
-      int32 width = 3;
-      int32 height = 4;
-      string hyperLink = 5;
-      string imagePath = 6;
-    }
-    Logo logo = 8;
-  }
-  Options options = 4;
+    Options options = 4;
 }
 
 message Task{
-  string id = 1;
-  string taskId = 2;
-  string docId = 3;
-  string docPath = 4;
-  string convertStatus = 5;
-  string convertDocId = 6;
-  int32 progress = 7;
-  string errorMsg = 8;
-  string convertConfig = 9;
+    string id = 1;
+    string taskId = 2;
+    string docId = 3;
+    string docPath = 4;
+    string convertStatus = 5;
+    string convertDocId = 6;
+    int32 progress = 7;
+    string errorMsg = 8;
+    string convertConfig = 9;
 }
 
 message TransformStatus{
-  string taskId = 1;
-  string convertStatus = 2;
-  string errorMsg = 3;
-  int32 progress = 4;
-  bool success = 5;
-  string convertResult = 6;
+    string taskId = 1;
+    string convertStatus = 2;
+    string errorMsg = 3;
+    int32 progress = 4;
+    bool success = 5;
+    string convertResult = 6;
 }
 
 message Result{
-  string id = 1;
+    string id = 1;
 }
 
