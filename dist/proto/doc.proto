@@ -61,6 +61,7 @@ message Doc {
     string thumb = 8;
     string mediaType = 9;
     int32 pages = 10;
+    string classId = 11;
 }
 
 
